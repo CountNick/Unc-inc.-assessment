@@ -1,0 +1,7 @@
+@import "../../styles/base.scss";
+
+.menu-overlay-toggle {
+  @media (min-width: $medium-breakpoint) {
+    display: none;
+  }
+}
