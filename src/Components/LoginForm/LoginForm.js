@@ -17,6 +17,8 @@ export default function LoginForm() {
     setIsLoggedIn(true);
     localStorage.setItem("isLoggedIn", true);
     setFormMessage("You are logged in");
+
+    window.location.href = "/dashboard";
   };
   const handleLogout = () => {
     setIsLoggedIn(false);
