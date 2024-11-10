@@ -9,7 +9,11 @@ export default function WithUserContext({ children }) {
   const hasStoredSession = JSON.parse(localStorage.getItem("isLoggedIn"));
 
   const [isLoggedIn, setIsLoggedIn] = useState(hasStoredSession ? true : false);
-  const user = { username: "uncinc", password: "letmein" };
+  const user = {
+    username: process.env.REACT_APP_USERNAME,
+    password: process.env.REACT_APP_PASSWORD,
+  };
+
   return (
     <UserContext.Provider
       value={{
