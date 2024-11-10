@@ -1,0 +1,28 @@
+@import "../../styles/base.scss";
+
+.layout {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @media (min-width: $small-breakpoint) {
+    padding-right: 36px;
+    padding-left: 36px;
+    max-width: $small-breakpoint;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    padding-right: 48px;
+    padding-left: 48px;
+    max-width: $medium-breakpoint;
+  }
+
+  @media (min-width: $medium-large-breakpoint) {
+    max-width: $medium-large-breakpoint;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    max-width: $large-breakpoint;
+  }
+}
