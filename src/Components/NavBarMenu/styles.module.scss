@@ -1,0 +1,30 @@
+@import "../../styles/base.scss";
+
+.navbar-menu {
+  width: 100%;
+  @media (min-width: $medium-breakpoint) {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+}
+.navbar-menu__navigation-list {
+  @include bare-list;
+
+  display: none;
+
+  @media (min-width: $medium-breakpoint) {
+    display: flex;
+    gap: 20px;
+  }
+}
+.navbar-menu__navigation-list[data-menu-is-open="true"] {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: white;
+  width: calc(100% - 36px);
+  height: 100%;
+  gap: 10px;
+  padding-top: 20px;
+}
