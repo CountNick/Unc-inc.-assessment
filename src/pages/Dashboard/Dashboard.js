@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-
+import React, { useContext, useEffect } from "react";
 import Layout from "../../Layout/Layout/Layout";
 
 import { Link } from "react-router-dom";
@@ -12,6 +11,12 @@ import styles from "./styles.module.scss";
 
 export default function Dashboard() {
   const { isLoggedIn, user } = useContext(UserContext);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      window.location.href = "/login";
+    }
+  }, [isLoggedIn]);
 
   return (
     <Layout>
