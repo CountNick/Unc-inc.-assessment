@@ -1,7 +1,5 @@
 import { useEffect, useContext } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import WithUIContext from "./context/ui";
-import WithUserContext from "./context/user";
 import { UIContext } from "./context/ui";
 
 import Home from "./pages/Home/Home";
