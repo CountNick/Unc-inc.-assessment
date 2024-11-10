@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useRef, useContext, useEffect, useState } from "react";
+import { useRef, useContext, useState } from "react";
 
 import { UserContext } from "../../context/user";
 
