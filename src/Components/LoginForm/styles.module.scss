@@ -1,0 +1,30 @@
+@import "../../styles/base.scss";
+
+.login-form__form {
+}
+
+.login-form__form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $black;
+  border-radius: 5px;
+  padding: 50px;
+  max-width: 500px;
+}
+
+.login-form__label {
+  margin-bottom: 5px;
+}
+
+.login-form__input {
+  font-size: 20px;
+  padding: 10px;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.login-form__submit {
+  width: fit-content;
+  padding: 10px;
+  font-size: 20px;
+}
