@@ -9,8 +9,6 @@ import styles from "./styles.module.scss";
 export default function MenuOverlayToggle() {
   const { menuIsOpen, setMenuIsOpen } = useContext(UIContext);
 
-  console.log(menuIsOpen);
-
   const toggleMenuVisibility = () => {
     setMenuIsOpen(!menuIsOpen);
   };
