@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 
-import "./App.scss";
+import "./styles/globals.scss";
 
 function App() {
   return (
