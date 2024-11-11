@@ -9,11 +9,13 @@ import styles from "./styles.module.scss";
 
 export default function Login() {
   return (
-    <Layout>
+    <>
       <SiteHeader />
-      <div className={styles["login"]}>
-        <LoginForm />
-      </div>
-    </Layout>
+      <Layout>
+        <div className={styles["login"]}>
+          <LoginForm />
+        </div>
+      </Layout>
+    </>
   );
 }

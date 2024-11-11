@@ -8,9 +8,13 @@ import styles from "./styles.module.scss";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <SiteHeader />
-      <div className={styles["home"]}>Home Page</div>
-    </Layout>
+      <Layout>
+        <div className={styles["home"]}>
+          <h1>Welcome to the unc inc routing demo</h1>
+        </div>
+      </Layout>
+    </>
   );
 }
