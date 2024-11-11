@@ -8,8 +8,10 @@ import styles from "./styles.module.scss";
 export default function SiteHeader() {
   return (
     <header className={styles["site-header"]} role="banner">
-      <NavBarMenu />
-      <MenuOverlayToggle />
+      <div className={styles["site-header__inner"]}>
+        <NavBarMenu />
+        <MenuOverlayToggle />
+      </div>
     </header>
   );
 }
