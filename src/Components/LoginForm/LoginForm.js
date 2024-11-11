@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useRef, useContext, useState } from "react";
 
@@ -9,6 +10,7 @@ import styles from "./styles.module.scss";
 export default function LoginForm() {
   const { user, setIsLoggedIn, isLoggedIn } = useContext(UserContext);
   const [formMessage, setFormMessage] = useState("");
+  const navigate = useNavigate();
 
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -18,7 +20,7 @@ export default function LoginForm() {
     localStorage.setItem("isLoggedIn", true);
     setFormMessage("You are logged in");
 
-    window.location.href = "/dashboard";
+    navigate("/dashboard");
   };
   const handleLogout = () => {
     setIsLoggedIn(false);

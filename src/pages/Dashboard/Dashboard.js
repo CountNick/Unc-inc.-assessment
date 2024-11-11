@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Layout from "../../Layout/Layout/Layout";
+import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
@@ -11,10 +12,11 @@ import styles from "./styles.module.scss";
 
 export default function Dashboard() {
   const { isLoggedIn, user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isLoggedIn) {
-      window.location.href = "/login";
+      navigate("/login");
     }
   }, [isLoggedIn]);
 
