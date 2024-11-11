@@ -1,6 +1,7 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 
-// import Hamburger from "components/partials/Hamburger";
+import { ReactComponent as HamburgerIcon } from "../../icons/hamburger.svg";
+import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 
 import { UIContext } from "../../context/ui";
 
@@ -21,8 +22,9 @@ export default function MenuOverlayToggle() {
       className={styles["menu-overlay-toggle"]}
       aria-haspopup="true"
     >
-      <span>{menuIsOpen === false ? "menu" : "close"}</span>
-      {/* <Hamburger isCross={menuIsOpen} /> */}
+      <span className={styles["menu-overlay-toggle__icon-wrapper"]}>
+        {menuIsOpen === false ? <HamburgerIcon /> : <CloseIcon />}
+      </span>
     </button>
   );
 }

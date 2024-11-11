@@ -1,7 +1,12 @@
 @import "../../styles/base.scss";
 
 .menu-overlay-toggle {
+  @include bare-button;
   @media (min-width: $medium-breakpoint) {
     display: none;
   }
+}
+.menu-overlay-toggle__icon-wrapper {
+  display: flex;
+  width: 24px;
 }

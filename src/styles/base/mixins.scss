@@ -6,3 +6,16 @@
     margin: 0;
   }
 }
+
+@mixin bare-button {
+  background: transparent;
+  cursor: pointer;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  appearance: none;
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
