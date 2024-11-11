@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     setMenuIsOpen(false);
     document.startViewTransition();
-  }, [location]);
+  }, [location, setMenuIsOpen]);
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />

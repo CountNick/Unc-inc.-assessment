@@ -18,7 +18,7 @@ export default function Dashboard() {
     if (!isLoggedIn) {
       navigate("/login");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <>
