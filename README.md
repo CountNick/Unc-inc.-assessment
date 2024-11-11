@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Unc Inc. routing assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made for the interview process at Unc Inc. This simple application is made with s bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A live example of the application can be found on: https://uncinc-assessment.netlify.app/
 
-## Available Scripts
+# About the project
+
+This application contains the following:
+
+- home page visible on `/`
+- login page visible on `/login`
+- dashboard page visible on `/dashboard`
+
+## The home page
+
+The home page is the welcoming page to the application, since the focus in this project was mainly on the login and redirection flow I've chosen not to render any additional elements on this page.
+
+## The login page
+
+The login page renders the `LoginForm` component. This component is responsible for logging the user in. When there is no user logged in the page will render a the `LoginForm` with two form fields:
+
+- A text field
+- A password field
+
+When the submit button is pressed the values of the filled in forms will be checked with the username and password set in the global user context. There are three possible scenarios here:
+
+- The username and password are correct, this will set the state of `formMessage` to `You are logged in` and sets the global user state of `isLoggedIn` to true. The user will be redirected to `/dashboard` after.
+- The username and/or password is incorrect this will set the state of `formMessage` to `Invalid credentials, please try again`
+
+Or:
+
+- When logged in the `Logout` buttons is clicked, this sets the global user state of `isLoggedIn` to false
+
+## The dashboard page
+
+The dashboard page itself does not really render any UI elements either. The main thing on this page is that the content won;t be visible if the user is not logged in and will be redirected to the `/login` page. After succesfully logging in the user will be redirected to this page, and the title `Welcome uncinc to the dashboard` will be shown.
+
+## State management
+
+### Global states
+
+I've chosen to add two global states using `useContext` these are:
+
+- user context
+- ui context
+
+Both these states should be accessible from a broader perspective of components and are therefore better suited to as loosely coupled states. I've also for global states here with scalability in mind.
+
+### UI context
+
+The ui context is now only responsible for setting a global state called `menuIsOpen`. This state is used in multiple components:
+
+- `App` to close the mobile menu on route changes
+- `MenuOverlayToggle` to toggle the mobile overlay menu
+- `NavBarMenu` to show the elements when the state changes
+
+### User context
+
+The user context is responsible for housing the user credentials and the global state called `isLoggedIn`. The user context is responsible for the following:
+
+- Check if there's a stored session in `LocalStorage` for `LoggedIn` if true immediately set the user context of `isLogged` in to true and otherwise to false
+- The state of `isLogged` in is set in the `handleSubmit` function in the `LoginForm` component. This state is used in the following component:
+  - `Dashboard` show the dashboard content when the state is `true`
+  - `LoginForm` show different form messages depending on the state
+  - `NavBarMenu` show `Login` or `Logout` depending on the state
+
+## Installation
+
+Start by cloning the repository:
+
+`git clone git@github.com:CountNick/Unc-inc.-assessment.git`
+
+Install the node modules:
+
+`yarn install`
 
 In the project directory, you can run:
 
-### `npm start`
+`yarn start`
 
-Runs the app in the development mode.\
+This runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+`yarn run build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Builds the app for production to the `build` folder.
