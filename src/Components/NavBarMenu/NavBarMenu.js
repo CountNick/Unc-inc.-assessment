@@ -2,8 +2,6 @@ import React from "react";
 
 import { useContext } from "react";
 
-import { ReactComponent as SiteLogo } from "../../icons/logo.svg";
-
 import { Link } from "react-router-dom";
 
 import { UIContext } from "../../context/ui";
