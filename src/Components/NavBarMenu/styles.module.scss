@@ -2,6 +2,8 @@
 
 .navbar-menu {
   width: 100%;
+  @include nav-link-text;
+
   @media (min-width: $medium-breakpoint) {
     display: flex;
     gap: 20px;
@@ -10,6 +12,7 @@
 }
 .navbar-menu__navigation-list {
   @include bare-list;
+  @include bigger-mobile-nav-link-text;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease, display 0.3s ease allow-discrete;

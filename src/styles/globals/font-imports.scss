@@ -1,0 +1,17 @@
+$regular: 400;
+$medium: 500;
+
+// Montserrat - Regular
+@font-face {
+  font-family: Roboto;
+  src: url("../../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: $regular;
+  font-style: normal;
+}
+// Montserrat - Medium
+@font-face {
+  font-family: Roboto;
+  src: url("../../fonts/Roboto/Roboto-Medium.woff2") format("woff2");
+  font-weight: $medium;
+  font-style: normal;
+}

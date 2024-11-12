@@ -1,3 +1,6 @@
+$regular: 400;
+$medium: 500;
+
 @mixin bare-list {
   margin: 0;
   padding: 0;
@@ -18,4 +21,34 @@
   &:focus:not(:focus-visible) {
     outline: 0;
   }
+}
+
+@mixin nav-link-text {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: $regular;
+}
+
+@mixin bigger-mobile-nav-link-text {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: $regular;
+
+  @media (min-width: $medium-breakpoint) {
+    font-size: 16px;
+  }
+}
+
+@mixin label-text {
+  font-family: Roboto;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: $medium;
+}
+
+@mixin title-text {
+  font-family: Roboto;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: $regular;
 }

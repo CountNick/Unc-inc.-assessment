@@ -48,7 +48,7 @@ export default function LoginForm() {
       <form className={styles["login-form__form"]}>
         {!isLoggedIn && (
           <>
-            <legend>Login</legend>
+            <legend className={styles["login-form__legend"]}>Login</legend>
             <label htmlFor="username" className={styles["login-form__label"]}>
               username
             </label>
