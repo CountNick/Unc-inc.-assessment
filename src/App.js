@@ -10,8 +10,8 @@ import "./styles/globals.scss";
 
 function App() {
   const { setMenuIsOpen } = useContext(UIContext);
-
   const location = useLocation();
+
   useEffect(() => {
     setMenuIsOpen(false);
     document.startViewTransition();
