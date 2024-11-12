@@ -63,6 +63,10 @@ The user context is responsible for housing the user credentials and the global 
   - `LoginForm` show different form messages depending on the state
   - `NavBarMenu` show `Login` or `Logout` depending on the state
 
+## Page transitions
+
+I tried to work with the view transitions api for the first time. The `startViewTransition()` function is triggered on route changes. Just when I was about to send this assessment off I noticed it's not working as I intended. It only seems to work on the intitial route changes. I would have liked to fix this but had no time left unforntunately.
+
 ## Installation
 
 Start by cloning the repository:
